@@ -92,8 +92,6 @@ Progetto_SO__Pipe_EXTERNAL_OBJECTS =
 
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/build.make
-Progetto_SO__Pipe: /usr/lib/x86_64-linux-gnu/libcurses.so
-Progetto_SO__Pipe: /usr/lib/x86_64-linux-gnu/libform.so
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Progetto_SO__Pipe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Progetto_SO__Pipe.dir/link.txt --verbose=$(VERBOSE)

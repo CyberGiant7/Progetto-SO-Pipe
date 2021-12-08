@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/Progetto_SO__Pipe.dir/main.c.o -o Progetto_SO__Pipe  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
+/usr/bin/cc -g CMakeFiles/Progetto_SO__Pipe.dir/main.c.o -o Progetto_SO__Pipe  -lncursesw 
