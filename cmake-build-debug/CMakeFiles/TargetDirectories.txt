@@ -1,0 +1,3 @@
+/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles/Progetto_SO__Pipe.dir

@@ -1,0 +1,11 @@
+/snap/clion/175/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe"
+-- The C compiler identification is GNU 10.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found Curses: /usr/lib/x86_64-linux-gnu/libcurses.so  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug
