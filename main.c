@@ -8,28 +8,50 @@
 #include <time.h>
 #include <locale.h>
 
+#define DIM_NAVICELLA 6
+#define DIM_NEMICO 3
 #define PASSO 1 /* Entita spostamento del vespa */
 #define maxx 80 /* Numero di colonne dello schermo */
 #define maxy 24 /* Numero di righe dello schermo */
 /* Struttura per la comunicazione tra figli e padre */
 struct pos {
-    char c; /* soggetto che invia il dato: vespa o contadino */
+    char c; /* soggetto che invia il dato: vespa o nave_player */
     int x; /* coordinata x */
     int y; /* coordinata y */
 };
 
 _Noreturn void vespa(int pipeout);
-_Noreturn void contadino(int pipeout);
+_Noreturn void nave_player(int pipeout);
 void AreaGioco(int pipein);
 //int maxx, maxy;
 
-char *navicella [6]= {"\u2588\u2588\u2588\u2588\u2588 ",
-                      " \u2588\u2588 \u2588 ",
-                      "\u2588\u2588\u2588\u2588\u2588\u2588",
-                      "\u2588\u2588\u2588\u2588\u2588\u2588",
-                      " \u2588\u2588 \u2588 ",
-                      "\u2588\u2588\u2588\u2588\u2588 "
+char *nave[DIM_NAVICELLA]= {" ▟█▛▀▀",
+                 "▟██▙",
+                 "▗▟█▒▙▖",
+                 "▝▜█▒▛▘",
+                 "▜██▛",
+                 " ▜█▙▄▄"
 };
+
+char *nemico_lv1[DIM_NEMICO]={"▀█▙"
+                              "█▒ "
+                              "▄█▛"
+};
+/*
+▀
+▄
+▗
+▖
+▘
+▝
+▙
+▚
+▛
+▜
+▞
+▟
+█
+*/
 
 int main() {
     int filedes[2];
@@ -44,7 +66,7 @@ int main() {
 
     start_color();
     init_pair(1, COLOR_YELLOW, COLOR_BLACK);  /* Colore vespa */
-    init_pair(2, COLOR_WHITE, COLOR_BLACK);   /* Colore contadino */
+    init_pair(2, COLOR_WHITE, COLOR_BLACK);   /* Colore nave_player */
     init_pair(3, COLOR_RED, COLOR_BLACK);   /* Colore trappola */
     init_pair(4, COLOR_BLACK, COLOR_BLACK);
     bkgd(COLOR_PAIR(1));
@@ -61,18 +83,18 @@ int main() {
             exit(1);
         case 0:
             close(filedes[0]); /* chiusura del descrittore di lettura (standard input)*/
-            vespa(filedes[1]); /* il primo processo figlio invoca la funzione contadino passandogli la pipe in scrittura*/
+            vespa(filedes[1]); /* il primo processo figlio invoca la funzione nave_player passandogli la pipe in scrittura*/
         default: //processo padre
-            pid_contadino = fork(); //generazione di un secondo processo figlio per la contadino
+            pid_contadino = fork(); //generazione di un secondo processo figlio per la nave_player
             switch (pid_contadino) {
                 case -1:
                     perror("Errore nell'esecuzione della fork.");
                     _exit(1);
                 case 0:
-                    mvprintw(maxy / 2, maxx / 2, "%s", navicella);
+                    mvprintw(maxy / 2, maxx / 2, "%s", nave);
                     close(filedes[0]); /* chiusura del descrittore di lettura (standard input)*/
-                    contadino(
-                            filedes[1]); /* il secondo processo figlio invoca la funzione contadino passandogli la pipe in scrittura*/
+                    nave_player(
+                            filedes[1]); /* il secondo processo figlio invoca la funzione nave_player passandogli la pipe in scrittura*/
                 default:    //processo padre
                     close(filedes[1]); /* chiusura del descrittore di scrittura (standard output)*/
                     AreaGioco(filedes[0]); /* il processo padre invoca la funzione di AreaGioco */
@@ -125,34 +147,26 @@ _Noreturn void vespa(int pipeout) {
     }
 }
 
-_Noreturn void contadino(int pipeout) {
-    struct pos pos_contadino;
-    pos_contadino.c='#';
-    pos_contadino.x= maxx/2;
-    pos_contadino.y= maxy/2;
-    write(pipeout, &pos_contadino, sizeof(pos_contadino));
+_Noreturn void nave_player(int pipeout) {
+    struct pos pos_navicella;
+    pos_navicella.c='#';
+    pos_navicella.x= 1;
+    pos_navicella.y= maxy / 2;
+    write(pipeout, &pos_navicella, sizeof(pos_navicella));
     keypad(stdscr, TRUE);
     while(1) {
         int c = getch();
         switch(c) {
             case KEY_UP:
-                if(pos_contadino.y > 1)
-                    pos_contadino.y-=1;
+                if(pos_navicella.y > 1)
+                    pos_navicella.y-=1;
                 break;
             case KEY_DOWN:
-                if(pos_contadino.y < maxy - sizeof(navicella[0]))
-                    pos_contadino.y+=1;
-                break;
-            case KEY_LEFT:
-                if(pos_contadino.x > 0)
-                    pos_contadino.x-=1;
-                break;
-            case KEY_RIGHT:
-                if(pos_contadino.x < maxx - sizeof(navicella[0]))
-                    pos_contadino.x+=1;
+                if(pos_navicella.y < maxy - DIM_NAVICELLA)
+                    pos_navicella.y+=1;
                 break;
         }
-        write(pipeout, &pos_contadino, sizeof(pos_contadino));
+        write(pipeout, &pos_navicella, sizeof(pos_navicella));
     }
 }
 
@@ -160,9 +174,9 @@ void AreaGioco (int pipein) {
     int vite = 3;
     int i;
     _Bool collision = false;
-    struct pos vespa, contadino, valore_letto, trap1, trap2, trap3;
+    struct pos vespa, navicella, valore_letto, trap1, trap2, trap3;
     vespa.x = -1;
-    contadino.x = -1;
+    navicella.x = -1;
 
     while(!collision){
         //getmaxyx(stdscr, maxy, maxx);
@@ -177,23 +191,23 @@ void AreaGioco (int pipein) {
             mvprintw(valore_letto.y,valore_letto.x,"^");
             vespa = valore_letto;
         } else if (valore_letto.c == '#'){
-            if (contadino.x >= 0) { /* cancello la 'vecchia' posizione della contadino */
+            if (navicella.x >= 0) { /* cancello la 'vecchia' posizione della navicella */
                 attron(COLOR_PAIR(4));
-                for (i = 0; i < 6; i++) {
-                    mvprintw(contadino.y+i,contadino.x,"      ");
+                for (i = 0; i < DIM_NAVICELLA; i++) {
+                    mvprintw(navicella.y + i, navicella.x, "      ");
                 }
                 attron(COLOR_PAIR(2));
-                for (i = 0; i < 6; i++) {
-                    mvprintw(valore_letto.y+i,valore_letto.x,navicella[i]);
+                for (i = 0; i < DIM_NAVICELLA; i++) {
+                    mvprintw(valore_letto.y+i, valore_letto.x, nave[i]);
                 }
             }
-            contadino = valore_letto;
+            navicella = valore_letto;
         }
         /* visualizzo l'oggetto nella posizione aggiornata */
-        if(vespa.x == contadino.x && vespa.y == contadino.y) {
+        if(vespa.x == navicella.x && vespa.y == navicella.y) {
             vite--;
-            if(contadino.x < maxx) contadino.x += 1; else contadino.x -= 1;
-            if(contadino.y < maxy) contadino.y += 1; else contadino.y -= 1;
+            if(navicella.x < maxx) navicella.x += 1; else navicella.x -= 1;
+            if(navicella.y < maxy) navicella.y += 1; else navicella.y -= 1;
         }
         if(valore_letto.c=='#' && valore_letto.y != 0 || valore_letto.x != 1){
 
