@@ -54,10 +54,10 @@ RM = /snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe"
+CMAKE_SOURCE_DIR = "/home/matteo/CLionProjects/Progetto SO - pipe v."
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/Progetto_SO__Pipe.dir/clean
 CMakeFiles/Progetto_SO__Pipe.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target Progetto_SO__Pipe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/CMakeFiles" --progress-num=1,2,3 "Built target Progetto_SO__Pipe"
 .PHONY : CMakeFiles/Progetto_SO__Pipe.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Progetto_SO__Pipe.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/CMakeFiles" 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Progetto_SO__Pipe.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Progetto_SO__Pipe.dir/rule
 
 # Convenience name for target.

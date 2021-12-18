@@ -1,4 +1,4 @@
-/snap/clion/175/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe"
+/snap/clion/175/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/bin/cc -G "CodeBlocks - Unix Makefiles" "/home/matteo/CLionProjects/Progetto SO - pipe v."
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug
+-- Build files have been written to: /home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug

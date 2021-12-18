@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/main.c" "CMakeFiles/Progetto_SO__Pipe.dir/main.c.o" "gcc" "CMakeFiles/Progetto_SO__Pipe.dir/main.c.o.d"
-  "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/menu.c" "CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o" "gcc" "CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o.d"
+  "/home/matteo/CLionProjects/Progetto SO - pipe v./main.c" "CMakeFiles/Progetto_SO__Pipe.dir/main.c.o" "gcc" "CMakeFiles/Progetto_SO__Pipe.dir/main.c.o.d"
+  "/home/matteo/CLionProjects/Progetto SO - pipe v./menu.c" "CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o" "gcc" "CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o.d"
   )
 
 # Targets to which this target links.

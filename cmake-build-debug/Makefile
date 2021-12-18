@@ -57,10 +57,10 @@ RM = /snap/clion/175/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe"
+CMAKE_SOURCE_DIR = "/home/matteo/CLionProjects/Progetto SO - pipe v."
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug"
+CMAKE_BINARY_DIR = "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -77,8 +77,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/snap/clion/175/bin/cmake/linux/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/snap/clion/175/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/CMakeFiles" "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

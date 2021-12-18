@@ -12,6 +12,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.21.1/CMakeSystem.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake"
+  "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeFindCodeBlocks.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake"
@@ -29,6 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake"
   "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake"
+  "/snap/clion/175/bin/cmake/linux/share/cmake-3.21/Modules/ProcessorCount.cmake"
   )
 
 # The corresponding makefile is:

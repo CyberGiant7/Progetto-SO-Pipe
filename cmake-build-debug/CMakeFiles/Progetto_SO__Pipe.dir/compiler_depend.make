@@ -11,8 +11,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -24,20 +24,21 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
   /usr/include/curses.h \
   /usr/include/ncurses_dll.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/include/unctrl.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
@@ -62,8 +63,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/signal.h \
+  /usr/include/x86_64-linux-gnu/bits/signum.h \
   /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
-  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
   /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
@@ -101,7 +102,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   ../menu.h
 
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
@@ -115,8 +115,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/timesize.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
@@ -128,20 +128,21 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
   /usr/include/curses.h \
   /usr/include/ncurses_dll.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h \
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdbool.h \
+  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h \
   /usr/include/unctrl.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
@@ -166,8 +167,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/alloca.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
   /usr/include/signal.h \
+  /usr/include/x86_64-linux-gnu/bits/signum.h \
   /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
-  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
   /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
@@ -204,11 +205,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
-  /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
+  /usr/include/x86_64-linux-gnu/bits/stat.h
 
-
-/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 
@@ -216,21 +214,9 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/fcntl.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
-
 /usr/include/endian.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/stdlib.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -250,19 +236,31 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 ../main.c:
 
-/usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h:
+/usr/include/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/environments.h:
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/signal.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
 
 /usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
 /usr/include/unctrl.h:
 
@@ -280,6 +278,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
@@ -293,6 +295,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdbool.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
@@ -308,7 +314,11 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/stdint.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -326,8 +336,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/10/include/stdarg.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
@@ -336,11 +344,15 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/10/include/stdbool.h:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
@@ -352,15 +364,13 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
+/usr/include/x86_64-linux-gnu/bits/signum.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
 /usr/include/x86_64-linux-gnu/bits/signum-generic.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
-
-/usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
@@ -375,10 +385,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/curses.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -402,14 +408,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
+/usr/include/time.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
 /usr/include/locale.h:
-
-/usr/include/stdint.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:

@@ -39,6 +39,10 @@ char *nemico_lv1[DIM_NEMICO]={"▀█▙"
                               "█▒ "
                               "▄█▛"
 };
+char *nemico_lv2[DIM_NEMICO]={" △ "
+                              "◁ ◊"
+                              " ▽ "
+};
 /*
 ▀
 ▄
@@ -53,6 +57,7 @@ char *nemico_lv1[DIM_NEMICO]={"▀█▙"
 ▞
 ▟
 █
+  	◀
 */
 
 
@@ -136,7 +141,7 @@ StatoCorrente gioco(){
            " | |__| |  / ____ \\  | |  | | | |____  | |__| |    \\  /    | |____  | | \\ \\   \n"
            "  \\_____| /_/    \\_\\ |_|  |_| |______|  \\____/      \\/     |______| |_|  \\_\\");
     refresh();
-    sleep(5);
+    sleep(500);
     endwin();
     return MENU;
 }
@@ -196,7 +201,7 @@ _Noreturn void nave_player(int pipeout) {
 }
 
 void AreaGioco (int pipein) {
-    int vite = 3;
+    int vite = 0;
     int i;
     _Bool collision = false;
     struct pos vespa, navicella, valore_letto, trap1, trap2, trap3;
@@ -230,7 +235,7 @@ void AreaGioco (int pipein) {
         }
         /* visualizzo l'oggetto nella posizione aggiornata */
         if(vespa.x == navicella.x && vespa.y == navicella.y) {
-            vite--;
+            vite-=3;
             if(navicella.x < maxx) navicella.x += 1; else navicella.x -= 1;
             if(navicella.y < maxy) navicella.y += 1; else navicella.y -= 1;
         }

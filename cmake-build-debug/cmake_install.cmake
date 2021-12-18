@@ -1,4 +1,4 @@
-# Install script for directory: /home/cybergiant/Desktop/C/Progetto_SO_ Pipe
+# Install script for directory: /home/matteo/CLionProjects/Progetto SO - pipe v.
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/bin/objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/matteo/CLionProjects/Progetto SO - pipe v./cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
