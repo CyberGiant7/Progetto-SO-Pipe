@@ -130,28 +130,31 @@ StatoCorrente gioco() {
         default:    //processo padre
             array_pos_nemici = (Pos *) malloc(sizeof(Pos) * M);
             int temp;
-            //for (i = 0; i < M; i++) {ù
-            i = 0;
-            pid_nemici = fork();
-            if (pid_nemici == -1) {
-                perror("Errore nell'esecuzione della fork.");
-                _exit(1);
-            } else if (pid_nemici == 0) {
-                char nome[10];
-                sprintf(nome, "Nemico_%d", i);
-                prctl(PR_SET_NAME, (unsigned long) nome);
-                array_pos_nemici[i].y = 1 + (i % 5) * (DIM_NEMICO + 1);
-                temp = (int) (i / 5) + 1;
-                array_pos_nemici[i].x = maxx - temp * DIM_NEMICO;
-                array_pos_nemici[i].n = 11 + i;
-                write(filedes[1], &array_pos_nemici[i], sizeof(array_pos_nemici[i]));
-                exit(0);
+            for (i = 0; i < M; i++) {
+                pid_nemici = fork();
+                if (pid_nemici == -1) {
+                    perror("Errore nell'esecuzione della fork.");
+                    _exit(1);
+                } else if (pid_nemici == 0) {
+                    while (true) {
+                        char nome[10];
+                        sprintf(nome, "Nemico_%d", i);
+                        prctl(PR_SET_NAME, (unsigned long) nome);
+                        array_pos_nemici[i].y = 1 + (i % 5) * (DIM_NEMICO + 1);
+                        temp = (int) (i / 5) + 1;
+                        array_pos_nemici[i].x = maxx - temp * (DIM_NEMICO + 1);
+                        array_pos_nemici[i].n = 11 + i;
+                        write(filedes[1], &array_pos_nemici[i], sizeof(array_pos_nemici[i]));
+                        usleep(1000000);
+                    }
+                } else if (pid_nemici != 0) {
+                    continue;
+                }
             }
-            if (pid_nemici != 0) {
-                close(filedes[1]); /* chiusura del descrittore di scrittura (standard output)*/
-                AreaGioco(filedes[0]); /* il processo padre invoca la funzione di AreaGioco */
-                // }
-            }
+            prctl(PR_SET_NAME, (unsigned long) "Area_gioco");
+            close(filedes[1]); /* chiusura del descrittore di scrittura (standard output)*/
+            AreaGioco(filedes[0]); /* il processo padre invoca la funzione di AreaGioco */
+
     }
     /* siamo usciti dalla funzione di AreaGioco e vengono terminati i 2 processi figli e ripristinato il normale modo operativo dello schermo */
     kill(pid_navicella, 1);
@@ -293,20 +296,20 @@ void AreaGioco(int pipein) {
             mvprintw(valore_letto.y, valore_letto.x, "<");
             missile2 = valore_letto;
         }
-        if (valore_letto.n == 11){
+        /*if (valore_letto.n == 11){
             for (j = 0; j < DIM_NEMICO; j++) {
                 mvprintw(valore_letto.y, valore_letto.x, nemico_lv1[j]);
             }
-        }
+        }*/
 
-        /*for(i=0; i < M; i++) {
+        for(i=0; i < M; i++) {
             if (valore_letto.n >= 11 && valore_letto.n <= 11 + M) {
                 attron(COLOR_PAIR(1));
                 for (j = 0; j < DIM_NEMICO; j++) {
-                    mvprintw(valore_letto.y, valore_letto.x, nemico_lv1[j]);
+                    mvprintw(valore_letto.y+j, valore_letto.x, nemico_lv1[j]);
                 }
             }
-        }*/
+        }
         /* visualizzo l'oggetto nella posizione aggiornata */
         //if (vespa.x == navicella.x + DIM_NAVICELLA - 1 && vespa.y == navicella.y + i)
         /*for (i = 0; i < DIM_NAVICELLA; i++) {
