@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/Progetto_SO__Pipe.dir/main.c.o -o Progetto_SO__Pipe  -lncursesw 
+/usr/bin/cc -g CMakeFiles/Progetto_SO__Pipe.dir/main.c.o CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o -o Progetto_SO__Pipe  -lncursesw 

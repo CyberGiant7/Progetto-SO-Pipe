@@ -7,6 +7,8 @@
 #include <sys/wait.h>
 #include <time.h>
 #include <locale.h>
+#include <fcntl.h>
+#include "menu.h"
 
 #define DIM_NAVICELLA 6
 #define DIM_NEMICO 3
@@ -26,11 +28,11 @@ void AreaGioco(int pipein);
 //int maxx, maxy;
 
 char *nave[DIM_NAVICELLA]= {" ▟█▛▀▀",
-                 "▟██▙",
-                 "▗▟█▒▙▖",
-                 "▝▜█▒▛▘",
-                 "▜██▛",
-                 " ▜█▙▄▄"
+                            "▟██▙",
+                            "▗▟█▒▙▖",
+                            "▝▜█▒▛▘",
+                            "▜██▛",
+                            " ▜█▙▄▄"
 };
 
 char *nemico_lv1[DIM_NEMICO]={"▀█▙"
@@ -53,10 +55,33 @@ char *nemico_lv1[DIM_NEMICO]={"▀█▙"
 █
 */
 
+
 int main() {
+    StatoCorrente status;
+    status = MENU;
+
+    while(TRUE) {
+        switch (status) {
+            case GIOCA:
+                status = gioco();
+                break;
+            case MENU:
+                status = menu();
+                break;
+            case ESCI:
+                return 0;
+                break;
+        }
+        clear();
+        refresh();
+    }
+}
+
+StatoCorrente gioco(){
     int filedes[2];
     int pid_vespa;
-    int pid_contadino;
+    int pid_navicella;
+    signal(SIGCHLD, SIG_IGN);
 
     setlocale(LC_ALL, "");
     initscr(); /* inizializzazione dello schermo */
@@ -85,8 +110,8 @@ int main() {
             close(filedes[0]); /* chiusura del descrittore di lettura (standard input)*/
             vespa(filedes[1]); /* il primo processo figlio invoca la funzione nave_player passandogli la pipe in scrittura*/
         default: //processo padre
-            pid_contadino = fork(); //generazione di un secondo processo figlio per la nave_player
-            switch (pid_contadino) {
+            pid_navicella = fork(); //generazione di un secondo processo figlio per la nave_player
+            switch (pid_navicella) {
                 case -1:
                     perror("Errore nell'esecuzione della fork.");
                     _exit(1);
@@ -102,7 +127,7 @@ int main() {
     }
     /* siamo usciti dalla funzione di AreaGioco e vengono terminati i 2 processi figli e ripristinato il normale modo operativo dello schermo */
     kill(pid_vespa, 1);
-    kill(pid_contadino, 1);
+    kill(pid_navicella, 1);
     clear();
     printw("   _____              __  __   ______    ____   __      __  ______   _____    \n"
            "  / ____|     /\\     |  \\/  | |  ____|  / __ \\  \\ \\    / / |  ____| |  __ \\   \n"
@@ -111,9 +136,9 @@ int main() {
            " | |__| |  / ____ \\  | |  | | | |____  | |__| |    \\  /    | |____  | | \\ \\   \n"
            "  \\_____| /_/    \\_\\ |_|  |_| |______|  \\____/      \\/     |______| |_|  \\_\\");
     refresh();
-    sleep(100);
+    sleep(5);
     endwin();
-    return 0;
+    return MENU;
 }
 
 _Noreturn void vespa(int pipeout) {
