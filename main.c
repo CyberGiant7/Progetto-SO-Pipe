@@ -16,23 +16,28 @@
 #define DIM_NEMICO 3
 #define maxx 80 /* Numero di colonne dello schermo */
 #define maxy 24 /* Numero di righe dello schermo */
-#define NAVE 0
-#define MISSILE_1 1
-#define MISSILE_2 2
+#define NAVE 0  // identificatore posizione navicella
+#define MISSILE_1 1 // identificatore posizione Missile 1
+#define MISSILE_2 2 // identificatore posizione Missile 2
+#define MAX_MISSILI 10 // Numero massimo di missili sparabili contemporaneamente
+
+// DA 200 a 300  identificatori per i missili
+// DA 11 a 100   identificatori Nemici
+// Da 101 a 150  identinficatori Bombe nemiche
 
 /* Struttura per la comunicazione tra figli e padre */
 typedef struct {
     int n; /* soggetto che invia il dato: vespa o nave_player */
     int x; /* coordinata x */
     int y; /* coordinata y */
+    _Bool in_vita;
 } Pos;
 
-_Noreturn void vespa(int pipeout);
 _Noreturn void nave_player(int pipeout);
 void AreaGioco(int pipein);
 
-int M;
-//int maxx, maxy;
+int M; //Numero nemici
+int num_missili = 0;
 
 char *nave[DIM_NAVICELLA]= {" ▟█▛▀▀",
                             "▟██▙  ",
@@ -72,7 +77,7 @@ char *nemico_lv2[DIM_NEMICO]={" △ "
 int main() {
     StatoCorrente status;
     status = MENU;
-    M = 10;
+    M = 20;
 
     while (TRUE) {
         switch (status) {
@@ -176,18 +181,23 @@ StatoCorrente gioco() {
 
 
 void nave_player(int pipeout) {
+    int filedes[2];
     int pid_missile1;
     int pid_missile2;
     Pos pos_missile1, pos_missile2, temp_missile;
     Pos pos_navicella;
+    _Bool morto;
 
     pos_navicella.n = NAVE;
     pos_navicella.x = 1;
     pos_navicella.y = maxy / 2;
 
-    pos_missile1.n = MISSILE_1;
-    pos_missile2.n = MISSILE_2;
-
+    if (pipe(filedes) == -1) { //inizializzazione della pipe con AreaGioco degli errori
+        perror("Errore nella creazione della pipe!");
+        _exit(1);
+    }
+    if (fcntl(filedes[0], F_SETFL, O_NONBLOCK) < 0) //pipe non bloccante
+        exit(2);
 
     write(pipeout, &pos_navicella, sizeof(pos_navicella));
 
@@ -195,6 +205,7 @@ void nave_player(int pipeout) {
 
     keypad(stdscr, TRUE);
     while (1) {
+        morto = FALSE;
         nodelay(stdscr, 1);
         timeout(500);
         int c = getch();
@@ -210,49 +221,77 @@ void nave_player(int pipeout) {
                 write(pipeout, &pos_navicella, sizeof(pos_navicella));
                 break;
             case KEY_SPACE:
-                pos_missile1.y = pos_navicella.y + (DIM_NAVICELLA / 2);
-                pos_missile1.x = pos_navicella.x + DIM_NAVICELLA;
-                pos_missile2.y = pos_navicella.y + (DIM_NAVICELLA / 2);
-                pos_missile2.x = pos_navicella.x + DIM_NAVICELLA;
-                pid_missile1 = fork(); //generazione processo
-                switch (pid_missile1) {
-                    case -1:
-                        perror("Errore nell'esecuzione della fork.");
-                        exit(1);
-                    case 0:
-                        prctl(PR_SET_NAME, (unsigned long) "Missile 1");
-                        /* funzione che genera coordinate missile 1*/
-                        while (TRUE) {
-                            pos_missile1.y -= 1;
-                            pos_missile1.x += 4;
-                            write(pipeout, &pos_missile1, sizeof(pos_missile1));
-                            if (pos_missile1.x > maxx || pos_missile1.y <= 1)
-                                exit(1);
-                            usleep(1000000);
-                        }
-                        break;
-                    default: //processo padre
-                        pid_missile2 = fork(); //generazione di un secondo processo figlio per la nave_player
-                        switch (pid_missile2) {
-                            case -1:
-                                perror("Errore nell'esecuzione della fork.");
-                                exit(1);
-                            case 0:
-                                prctl(PR_SET_NAME, (unsigned long) "Missile 2");
-                                while (TRUE) {
-                                    pos_missile2.y += 1;
-                                    pos_missile2.x += 4;
-                                    write(pipeout, &pos_missile2, sizeof(pos_missile2));
-                                    if (pos_missile2.x > maxx || pos_missile2.y >= maxy)
-                                        exit(1);
-                                    usleep(1000000);
+                if (num_missili <= MAX_MISSILI-2) {
+                    num_missili += 2;
+                    int status;
+                    pos_missile1.y = pos_navicella.y + (DIM_NAVICELLA / 2);
+                    pos_missile1.x = pos_navicella.x + DIM_NAVICELLA;
+                    pos_missile2.y = pos_navicella.y + (DIM_NAVICELLA / 2);
+                    pos_missile2.x = pos_navicella.x + DIM_NAVICELLA;
+
+                    pos_missile1.n = 200 + num_missili -2;
+                    pos_missile2.n = 201 + num_missili -2;
+
+                    int i = 0;
+
+                    pid_missile1 = fork(); //generazione processo
+                    switch (pid_missile1) {
+                        case -1:
+                            perror("Errore nell'esecuzione della fork.");
+                            exit(1);
+                        case 0:
+                            prctl(PR_SET_NAME, (unsigned long) "Missile 1");
+                            /* funzione che genera coordinate missile 1*/
+                            i = 0;
+                            while (TRUE) {
+                                if (i % 7 == 0) {
+                                    pos_missile1.y -= 1;
                                 }
-                                break;
-                            default:
-                                break;
-                        }
+                                pos_missile1.x += 1;
+                                write(pipeout, &pos_missile1, sizeof(pos_missile1));
+                                i++;
+                                if (pos_missile1.x > maxx || pos_missile1.y <= 0) {
+                                    morto = true;
+                                    write(filedes[1], &morto, sizeof(morto));
+                                    exit(1);
+                                }
+                                usleep(100000);
+                            }
+                            break;
+                        default: //processo padre
+                            pid_missile2 = fork(); //generazione di un secondo processo figlio per la nave_player
+                            switch (pid_missile2) {
+                                case -1:
+                                    perror("Errore nell'esecuzione della fork.");
+                                    exit(1);
+                                case 0:
+                                    prctl(PR_SET_NAME, (unsigned long) "Missile 2");
+                                    i = 0;
+                                    while (TRUE) {
+                                        if (i % 7 == 0) {
+                                            pos_missile2.y += 1;
+                                        }
+                                        pos_missile2.x += 1;
+                                        write(pipeout, &pos_missile2, sizeof(pos_missile2));
+                                        i++;
+                                        if (pos_missile2.x > maxx || pos_missile2.y >= maxy) {
+                                            morto = true;
+                                            write(filedes[1], &morto, sizeof(morto));
+                                            exit(1);
+                                        }
+                                        usleep(100000);
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                    }
+                    break;
                 }
-                break;
+        }
+        read(filedes[0], &morto, sizeof(morto));
+        if (morto) {
+            num_missili--;
         }
     }
 }
@@ -263,13 +302,15 @@ void AreaGioco(int pipein) {
     int vite = 1000;
     int i, j;
     _Bool collision = false;
-    Pos navicella, missile1, missile2, valore_letto;
+    Pos navicella, valore_letto;
+    Pos missili[MAX_MISSILI];
     navicella.x = -1;
 
     while (true) {
         move(0, 1);
         clrtoeol();
         printw("VITE: %d", vite);
+        refresh();
         read(pipein, &valore_letto, sizeof(valore_letto)); /* leggo dalla pipe */
         if (valore_letto.n == NAVE) {
             if (navicella.x >= 0) { /* cancello la 'vecchia' posizione della navicella */
@@ -283,18 +324,12 @@ void AreaGioco(int pipein) {
                 }
             }
             navicella = valore_letto;
-        } else if (valore_letto.n == MISSILE_1) {
-            attron(COLOR_PAIR(0));
-            mvprintw(missile1.y, missile1.x, " ");
-            attron(COLOR_PAIR(1));
-            mvprintw(valore_letto.y, valore_letto.x, ">");
-            missile1 = valore_letto;
-        } else if (valore_letto.n == MISSILE_2) {
-            attron(COLOR_PAIR(0));
-            mvprintw(missile2.y, missile2.x, " ");
-            attron(COLOR_PAIR(1));
-            mvprintw(valore_letto.y, valore_letto.x, "<");
-            missile2 = valore_letto;
+        } else if (valore_letto.n >= 200 && valore_letto.n <= 300) {
+                attron(COLOR_PAIR(0));
+                mvprintw(missili[valore_letto.n - 200].y, missili[valore_letto.n - 200].x, " ");
+                attron(COLOR_PAIR(1));
+                mvprintw(valore_letto.y, valore_letto.x, "卐"); ///♿ ⟢ ⁂ ꗇ ꗈ 💣 🚀
+                missili[valore_letto.n - 200] = valore_letto;
         }
         /*if (valore_letto.n == 11){
             for (j = 0; j < DIM_NEMICO; j++) {
