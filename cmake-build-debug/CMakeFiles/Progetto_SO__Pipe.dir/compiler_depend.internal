@@ -4,6 +4,7 @@
 CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/main.c
  /usr/include/stdc-predef.h
+ /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -116,7 +117,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
  /usr/include/x86_64-linux-gnu/asm/posix_types.h
  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
  /usr/include/asm-generic/posix_types.h
- /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.h
 
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.c
@@ -221,4 +221,17 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
  /usr/include/x86_64-linux-gnu/bits/stat.h
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
+ /usr/include/x86_64-linux-gnu/sys/prctl.h
+ /usr/include/linux/prctl.h
+ /usr/include/linux/types.h
+ /usr/include/x86_64-linux-gnu/asm/types.h
+ /usr/include/asm-generic/types.h
+ /usr/include/asm-generic/int-ll64.h
+ /usr/include/x86_64-linux-gnu/asm/bitsperlong.h
+ /usr/include/asm-generic/bitsperlong.h
+ /usr/include/linux/posix_types.h
+ /usr/include/linux/stddef.h
+ /usr/include/x86_64-linux-gnu/asm/posix_types.h
+ /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
+ /usr/include/asm-generic/posix_types.h
 

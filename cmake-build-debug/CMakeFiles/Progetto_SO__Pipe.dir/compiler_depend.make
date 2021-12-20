@@ -3,6 +3,7 @@
 
 CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/stdc-predef.h \
+  ../menu.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -114,8 +115,7 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/linux/stddef.h \
   /usr/include/x86_64-linux-gnu/asm/posix_types.h \
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
-  /usr/include/asm-generic/posix_types.h \
-  ../menu.h
+  /usr/include/asm-generic/posix_types.h
 
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/stdc-predef.h \
@@ -218,7 +218,20 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+  /usr/include/x86_64-linux-gnu/sys/prctl.h \
+  /usr/include/linux/prctl.h \
+  /usr/include/linux/types.h \
+  /usr/include/x86_64-linux-gnu/asm/types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h
 
 
 /usr/include/asm-generic/posix_types.h:
@@ -261,8 +274,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/stddef.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
 /usr/include/linux/posix_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
@@ -273,31 +284,25 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/features.h:
 
-../menu.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
 /usr/include/x86_64-linux-gnu/sys/wait.h:
 
 ../main.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/signal.h:
-
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
-/usr/include/x86_64-linux-gnu/bits/sigaction.h:
-
-/usr/include/unistd.h:
-
-/usr/include/unctrl.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
@@ -310,6 +315,28 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/ncurses_dll.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/unctrl.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+../menu.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
@@ -332,16 +359,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 ../menu.c:
 
 /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -381,9 +398,9 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
 /usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
@@ -421,9 +438,9 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
@@ -448,7 +465,3 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/locale.h:
-
-/usr/include/stdint.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
