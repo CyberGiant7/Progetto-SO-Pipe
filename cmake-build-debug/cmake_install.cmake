@@ -1,4 +1,4 @@
-# Install script for directory: /home/cybergiant/Desktop/C/Progetto_SO_ Pipe
+# Install script for directory: /home/cybergiant/CLionProjects/Progetto_SO__Pipe
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/cybergiant/Desktop/C/Progetto_SO_ Pipe/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

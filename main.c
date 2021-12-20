@@ -1,14 +1,3 @@
-#include <stdio.h>
-#include <curses.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <time.h>
-#include <locale.h>
-#include <fcntl.h>
-#include <sys/prctl.h> // momentanea, per dare nomi ai processi
 #include "menu.h"
 
 #define KEY_SPACE 32
@@ -89,7 +78,6 @@ int main() {
                 break;
             case ESCI:
                 return 0;
-                break;
         }
         clear();
         refresh();

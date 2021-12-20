@@ -1,3 +1,5 @@
+#define _POSIX_SOURCE
+#define _DEFAULT_SOURCE
 #ifndef PROGETTO_SO__PIPE_MENU_H
 #define PROGETTO_SO__PIPE_MENU_H
 
@@ -11,6 +13,7 @@
 #include <time.h>
 #include <locale.h>
 #include <fcntl.h>
+#include <sys/prctl.h> // momentanea, per dare nomi ai processi
 
 
 #define MENU_ELEM 2
