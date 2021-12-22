@@ -270,12 +270,13 @@ void nave_player(int pipeout) {
                             prctl(PR_SET_NAME, (unsigned long) "Missile 1");
                             /* funzione che genera coordinate missile 1*/
                             i = 0;
+                            pos_missile1.vite = 1;
+                            pos_missile1.pid = getpid();
                             while (TRUE) {
                                 if (i % 7 == 0) {
                                     pos_missile1.y -= 1;
                                 }
                                 pos_missile1.x += 1;
-                                pos_missile1.vite = 1;
                                 write(pipeout, &pos_missile1, sizeof(pos_missile1));
                                 write(filedes[1], &pos_missile1, sizeof(pos_missile1));
                                 i++;
@@ -296,12 +297,13 @@ void nave_player(int pipeout) {
                                 case 0:
                                     prctl(PR_SET_NAME, (unsigned long) "Missile 2");
                                     i = 0;
+                                    pos_missile2.vite = 1;
+                                    pos_missile2.pid = getpid();
                                     while (TRUE) {
                                         if (i % 7 == 0) {
                                             pos_missile2.y += 1;
                                         }
                                         pos_missile2.x += 1;
-                                        pos_missile2.vite = 1;
                                         write(pipeout, &pos_missile2, sizeof(pos_missile2));
                                         write(filedes[1], &pos_missile2, sizeof(pos_missile2));
                                         i++;
@@ -337,7 +339,7 @@ void nave_player(int pipeout) {
         if(num_missili == MAX_MISSILI && j == MAX_MISSILI) {
             num_missili = 0;
         }
-        //mvprintw(0,15,"num_missili= %d, j= %d", num_missili, j);
+        mvprintw(2,0,"num_missili= %d, j= %d", num_missili, j);
     }
 }
 
@@ -346,7 +348,7 @@ void nave_player(int pipeout) {
 
 void AreaGioco(int pipein, int pipeout, Pos *pos_nemici) {
     int vite = 1000;
-    int i, j;
+    int i, j, k;
     _Bool collision = false;
     Pos navicella, valore_letto;
     Pos missili[MAX_MISSILI];
@@ -411,19 +413,36 @@ void AreaGioco(int pipein, int pipeout, Pos *pos_nemici) {
             pos_nemici[valore_letto.id - START_ID_NEMICI] = valore_letto;
         }
 
-        /* visualizzo l'oggetto nella posizione aggiornata */
-        //if (vespa.x == navicella.x + DIM_NAVICELLA - 1 && vespa.y == navicella.y + i)
-        /*for (i = 0; i < DIM_NAVICELLA; i++) {
-            if ((vespa.x == navicella.x + i && vespa.y == navicella.y)
-                || (vespa.x == navicella.x + i && vespa.y == navicella.y + DIM_NAVICELLA - 1)
-                || ) {
-                vite -= 3;
-                if (navicella.x < maxx) navicella.x += 1; else navicella.x -= 1;
-                if (navicella.y < maxy) navicella.y += 1; else navicella.y -= 1;
-            }
-            if (valore_letto.c == '#' && valore_letto.y != 0 || valore_letto.x != 1) {
+        for (i=0; i < M; i++) {
+            if(pos_nemici[i].id != 0) {
+                for (j = 0; j < MAX_MISSILI; j++) {
+                    if(missili[j].id != 0) {
+                        for (k = 0; k < DIM_NEMICO; ++k) {
+                            for (int l = 0; l < DIM_NEMICO; ++l) {
+                                if (missili[j].x == pos_nemici[i].x + k + l &&
+                                    missili[j].y == pos_nemici[i].y + k + l) {
+                                    mvprintw(1,0, "missili[%d].pid = %d", j, missili[j].pid);
 
-            }*/
+                                    kill(missili[j].pid, SIGKILL);
+                                    kill(pos_nemici[i].pid, SIGKILL);
+
+                                    attron(COLOR_PAIR(0));
+                                    mvaddstr(missili[j].y, missili[j].x, " ");
+                                    for (int m = 0; m < DIM_NEMICO; m++) {
+                                        mvaddstr(pos_nemici[i].y + m, pos_nemici[i].x, "   ");
+                                    }
+                                    attroff(COLOR_PAIR(0));
+
+                                    missili[j] = init;
+                                    pos_nemici[i] = init;
+                                    //write(pipeout, pos_nemici, sizeof(pos_nemici));
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         move(0,0);
         clrtoeol();
