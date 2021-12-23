@@ -1,11 +1,4 @@
-/snap/clion/175/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/cybergiant/CLionProjects/Progetto_SO__Pipe
--- The C compiler identification is GNU 10.3.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Found Curses: /usr/lib/x86_64-linux-gnu/libcurses.so  
+/snap/clion/177/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/cybergiant/CLionProjects/Progetto_SO__Pipe
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug
