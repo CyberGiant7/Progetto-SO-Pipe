@@ -215,23 +215,33 @@ void Enemy(int pipein, int pipeout, Oggetto enemy){
     int j = 0, l=0, temp;
     int status = 0;
     char nome[10];
-    Oggetto dummy;
+    int random, random2;
+    int fd1[2];
+    pid_t pid_bomba;
+    Oggetto dummy, bomba;
     sprintf(nome, "Nemico_%d", enemy.index);
     prctl(PR_SET_NAME, (unsigned long) nome);
+
+    bomba = init;
+    bomba.id = START_ID_BOMBE_NEMICHE;
 
     enemy.vite = 3;
     enemy.pid = getpid();
     enemy.old_pos.x = -1;
     enemy.old_pos.y = -1;
     dummy.vite = 3;
+    if (pipe(fd1) == -1) { //bombe -> nemici
+        perror("Errore nella creazione della pipe!");
+        _exit(1);
+    }
 
     while (true) {
         enemy.pos.y = (1 + (enemy.index % 5) * (DIM_NEMICO + 1)) + j;
         temp = (int) (enemy.index / 5) + 1;
         enemy.pos.x = maxx - temp * (DIM_NEMICO + 1) - l;
         enemy.id = START_ID_NEMICI + enemy.index;
-
-
+        bomba.pos.x = enemy.pos.x-1;
+        bomba.pos.y = enemy.pos.y+1;
         if (enemy.vite == 0) {
             write(pipeout, &enemy, sizeof(Oggetto));
             exit(1);
@@ -241,27 +251,11 @@ void Enemy(int pipein, int pipeout, Oggetto enemy){
         read(pipein, &dummy, sizeof(Oggetto));
         enemy.vite = dummy.vite;
 
-        if (j % 8 == 0) { //serve per sposta le navicelle di una posizione da destra verso sinistra
-            /* Questa serie di if serve per impedire, nel caso ci siano contemporaneamente più colonne di nemici, che le ultime superino quelle che hanno davanti*/
-            /** C'è un bug le navi nemiche (che stanno dietro) si fermano prima anche se la colonna di navi che hanno di fronte è stata distrutta *
-             * if(i>=0 && i<5)array_pos_nemici[i + 5].vite != 0*/
-
-//            if (array_temp[i].x > (DIM_NAVICELLA + 2)) {
-//                if (i + 5 < M) {
-//                    if (array_pos_nemici[i].x != ((DIM_NAVICELLA + 2) + ((DIM_NEMICO + 1) * ((M/5)+p)))) { //array_temp[i + 5].vite > 0 &&
-//                                        l += 2;
-//                                    }
-//
-//                                    if (array_temp[i+5].x == (DIM_NAVICELLA + 2))
-//                                    if (array_pos_nemici[i+5].x != 0)
-//                                        array_pos_nemici[i].x = array_temp[i+5].x;
-//                                    if (array_temp[i+5].vite != 0)
-//                                        l += 2;
-//                                } else { //caso prima colonna
-//                                    l += 2;
-//                                }
-//                            }
+        /*Spostamenti navicelle*/
+        if (j % 8 == 0) {
+            l++;
         }
+
         usleep(100000); //velocità spostamento nemici
         if (j <= 4 && status == 0) {
             j++;
@@ -272,6 +266,27 @@ void Enemy(int pipein, int pipeout, Oggetto enemy){
             if (j == 0)
                 status = 0;
         }
+
+        random = rand()%1000; //genera numero casuale
+        /*generazione bombe*/
+        if((random) % 50 == 0 && ((enemy.index/5 )%2 == 0)) {
+            if (enemy.index % 3 == 0) {
+                pid_bomba = fork(); //generazione processo
+                switch (pid_bomba) {
+                    case -1:
+                        perror("Errore nell'esecuzione della fork.");
+                        exit(1);
+                    case 0:
+                        prctl(PR_SET_NAME, (unsigned long) "Bomberr");
+                        close(fd1[0]);
+                        missili(pipeout, fd1[1], 3, &bomba);
+                        break;
+                    default: //processo padre
+                        break;
+                }
+            }
+        }
+
         enemy.old_pos = enemy.pos;
     }
 }
@@ -418,20 +433,41 @@ void missili(int pipe_to_grandpa, int pipe_to_dad, int tipo, Oggetto *missile){
     missile->vite = 1;
     missile->pid = getpid();
     while (TRUE) {
+        /*if(tipo == 3){
+             clear();
+             mvprintw(0,0,"vite: %d\n"
+                          "pid: %d\n"
+                          "id: %d\n"
+                          "x: : %d\n"
+                          "y: : %d\n", missile->vite, missile->pid, missile->id, missile->pos.x, missile->pos.y);
+             refresh();
+        }*/
         if (i % 20 == 0) {
             if (tipo == 2) {
                 missile->pos.y += 1;
-            }else if (tipo==1){
+
+            } else if (tipo == 1) {
                 missile->pos.y -= 1;
+
             }
         }
-        missile->pos.x += 1;
+        if(tipo == 2 || tipo == 1){
+            missile->pos.x += 1;
+        }
+        if(tipo == 3){
+            missile->pos.x -= 1;
+        }
         write(pipe_to_grandpa, missile, sizeof(Oggetto));
         write(pipe_to_dad, missile, sizeof(Oggetto));
         i++;
-        if (missile->pos.x > maxx || missile->pos.y >= maxy) {
+        if ((missile->pos.x > maxx || missile->pos.y >= maxy || missile->pos.y < 0) && (tipo == 2 || tipo == 1)) {
             missile->vite = 0;
             write(pipe_to_dad, missile, sizeof(Oggetto));
+            exit(1);
+        }else if((missile->pos.x < 0 || missile->pos.y >= maxy || missile->pos.y < 0) && tipo == 3){
+            missile->vite = 0;
+            write(pipe_to_dad, missile, sizeof(Oggetto));
+            sleep(10);
             exit(1);
         }
         missile->old_pos = missile->pos;
@@ -473,7 +509,7 @@ void AreaGioco(int pipein, int pipe_to_navicella,int *pipe_to_nemici, Oggetto *e
         enemies[i].vite = 3;
     }
 
-    while (true) {
+    do {
         /*if(getmaxx(stdscr)!= 80 || getmaxy(stdscr)!= 24){
             system("printf '\033[8;24;80t'");
             resize_term(24,80);
@@ -593,11 +629,19 @@ void AreaGioco(int pipein, int pipe_to_navicella,int *pipe_to_nemici, Oggetto *e
                 attroff(COLOR_PAIR(0));
                 // }
                 attron(COLOR_PAIR(3));
-                mvprintw(valore_letto.pos.y, valore_letto.pos.x, "ꗈ"); ///♿ ⟢ ⁂ ꗇ ꗈ 💣 🚀 卐 ◌́ ◌͂ ✝
+                mvprintw(valore_letto.pos.y, valore_letto.pos.x, "⟢"); ///♿ ⟢ ⁂ ꗇ ꗈ 💣 🚀 卐 ◌́ ◌͂ ✝
                 attroff(COLOR_PAIR(3));
                 missili[valore_letto.index] = valore_letto;
                 break;
             case BOMBA:
+                attron(COLOR_PAIR(0));
+                mvprintw(valore_letto.old_pos.y, valore_letto.old_pos.x, " ");
+                attroff(COLOR_PAIR(0));
+                // }
+                attron(COLOR_PAIR(7));
+                mvprintw(valore_letto.pos.y, valore_letto.pos.x, "⟢"); ///♿ ⟢ ⁂ ꗇ ꗈ 💣 🚀 卐 ◌́ ◌͂ ✝
+                attroff(COLOR_PAIR(7));
+
                 break;
         }
 
@@ -624,8 +668,7 @@ void AreaGioco(int pipein, int pipe_to_navicella,int *pipe_to_nemici, Oggetto *e
                             || enemies[i].pos.x == missili[j].pos.x && enemies[i].pos.y + 1 == missili[j].pos.y
                             || enemies[i].pos.x == missili[j].pos.x && enemies[i].pos.y + 2 == missili[j].pos.y
                             || enemies[i].pos.x + 1 == missili[j].pos.x && enemies[i].pos.y + 2 == missili[j].pos.y
-                            || enemies[i].pos.x + 2 == missili[j].pos.x && enemies[i].pos.y + 2 == missili[j].pos.y)
-                        {
+                            || enemies[i].pos.x + 2 == missili[j].pos.x && enemies[i].pos.y + 2 == missili[j].pos.y) {
                             kill(missili[j].pid, SIGKILL);
                             missili[j].vite = 0;
                             write(pipe_to_navicella, &missili[j], sizeof(missili[j]));
@@ -643,6 +686,7 @@ void AreaGioco(int pipein, int pipe_to_navicella,int *pipe_to_nemici, Oggetto *e
                 }
             }
         }
+
 //        clear();
 //        for (i = 0; i < M; i++) {
 ////            mvprintw(0, 0, "%d", m);
@@ -663,8 +707,11 @@ void AreaGioco(int pipein, int pipe_to_navicella,int *pipe_to_nemici, Oggetto *e
 
         refresh();
         m++;
-        /*if (vite == 0) {
-            collision = true;
-        }*/
-    }
+        for(i=0; i<M; i++) {
+            if (enemies[i].pos.x == DIM_NAVICELLA + 2) {
+                collision = TRUE;
+                break;
+            }
+        }
+    }while(!collision);
 }
