@@ -1,67 +1,37 @@
-#define _POSIX_SOURCE
-#define _DEFAULT_SOURCE
-#ifndef PROGETTO_SO__PIPE_MENU_H
-#define PROGETTO_SO__PIPE_MENU_H
+#ifndef PROGETTO_SO___THREAD_AREA_MENU_H
+#define PROGETTO_SO___THREAD_AREA_MENU_H
+#include "macro.h"
 
-#include <stdio.h>
-#include <curses.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <time.h>
-#include <locale.h>
-#include <fcntl.h>
-#include <sys/prctl.h> // momentanea, per dare nomi ai processi
+/// Macro per il menu iniziale
+#define MENU_ELEM 3             // Numero di elementi del menu principale
+#define DEFAULT_MAXX 100        // Risoluzione di default (colonne)
+#define DEFAULT_MAXY 30         // Risoluzione di default (righe)
+#define ALTEZZA_TITOLO 13       // Caratteri altezza titolo
+#define LARGHEZZA_TITOLO 65     // Caratteri larghezza titolo
+#define ALTEZZA_GIOCA 2         // Caratteri altezza gioca
+#define LARGHEZZA_GIOCA 17      // Caratteri larghezza gioca
+#define ALTEZZA_OPZIONI 2       // Caratteri altezza opzioni
+#define LARGHEZZA_OPZIONI 23    // Caratteri larghezza opzioni
+#define ALTEZZA_ESCI 2          // Caratteri altezza esci
+#define LARGHEZZA_ESCI 12       // Caratteri larghezza esci
+#define MENUWIN_X 70            // Larghezza default della finestra del menu iniziale
+#define MENUWIN_Y 20            // Altezza default della finestra del menu iniziale
 
+/// Macro per le opzioni
+#define NUMERO_OPZIONI 4            // Numero di opzioni modificabili
+#define NUMERO_RISOLUZIONI 5        // Numero di risoluzioni modificabili
+#define NUMERO_SELEZIONI_NEMICI 12  // Numero di valori di nemici selezionabili
+#define NUMERO_VELOCITA_MISSILI 3   // Numero di opzioni per la modifica della velocità missili
 
-#define MENU_ELEM 3
-#define DEFAULT_MAXX 100
-#define DEFAULT_MAXY 30
-#define DIM_TITOLO 13
-
-
-#define NUMERO_OPZIONI 4
-#define NUMERO_RISOLUZIONI 5
-#define NUMERO_SELEZIONI_NEMICI 12
-#define MENUWIN_X 70
-#define MENUWIN_Y 20
-
-typedef enum {GIOCA, MENU, OPZIONI, ESCI} StatoCorrente;
+/// Enumerazione che contiene le varie risoluzioni selezionabili
 typedef enum {R_80_X_24, R_100_X_30, R_100_X_45, R_150_X_45, R_170_X_51} Risoluzioni;
 
-
-typedef struct {
-    int x; /* coordinata x */
-    int y; /* coordinata y */
-} Pos;
-typedef enum{ID_NAVICELLA, ID_NEMICO, ID_MISSILE, ID_BOMBA} IdOggetto;
-
-typedef struct {
-    int index;         // Indice dell'oggetto
-    IdOggetto id;            // Identificatore dell'entità che invia i dati
-    Pos pos;           // Posizione attuale dell'oggetto
-    Pos old_pos;       // Posizione precedente dell'oggetto
-    pid_t pid;              // Pid del processo proprietario
-    int vite;
-} Oggetto;
-
-typedef struct{
-    int vite;
-    _Bool primafila;
-} InfoToNemici;
-
-
-StatoCorrente menu();
-extern StatoCorrente gioco();
-extern int M;
-extern int num_righe;
-extern int mov_verticale;
-extern void stampaNemico(Oggetto nemico, int vite);
+/// Definizione delle funzioni
+extern void stampaNemico(Oggetto enemy, int vite);
 extern void stampaNavicella(Oggetto navicella);
-extern void stampaMiss_bomb(Oggetto bomb_miss);
-extern int velocita_missili;
-StatoCorrente opzioni();
+extern void stampaMissile(Oggetto *missile);
+extern void stampaBomba(Oggetto *bomba);
+StatoCorrente area_menu();
 
-#endif //PROGETTO_SO__PIPE_MENU_H
+
+#endif //PROGETTO_SO___THREAD_AREA_MENU_H

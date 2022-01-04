@@ -4,6 +4,7 @@
 CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/stdc-predef.h \
   ../menu.h \
+  ../macro.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -120,6 +121,7 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/stdc-predef.h \
   ../menu.h \
+  ../macro.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -240,8 +242,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/linux/stddef.h:
 
-/usr/include/asm-generic/bitsperlong.h:
-
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/asm-generic/int-ll64.h:
@@ -257,6 +257,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
 
 /usr/include/fcntl.h:
+
+/usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -298,23 +300,11 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/signal.h:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/usr/include/stdc-predef.h:
-
-/usr/include/ncurses_dll.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/unctrl.h:
 
@@ -332,15 +322,23 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 
 /usr/include/unistd.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/stdc-predef.h:
 
-../menu.h:
+/usr/include/ncurses_dll.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/signal.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+../macro.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
@@ -351,6 +349,16 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+../menu.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
@@ -389,8 +397,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/stdbool.h:
 
@@ -463,5 +469,3 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/locale.h:

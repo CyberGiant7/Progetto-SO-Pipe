@@ -5,6 +5,7 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/main.c
  /usr/include/stdc-predef.h
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.h
+ /home/cybergiant/CLionProjects/Progetto_SO__Pipe/macro.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -122,6 +123,7 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.c
  /usr/include/stdc-predef.h
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.h
+ /home/cybergiant/CLionProjects/Progetto_SO__Pipe/macro.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h

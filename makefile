@@ -1,5 +1,5 @@
-progetto: main.o menu.o
-	gcc -o progetto main.o menu.o -lncursesw
+progetto_processi: main.o menu.o
+	gcc -o progetto_processi main.o menu.o -lncursesw
 	rm *.o
     #./progetto
 
