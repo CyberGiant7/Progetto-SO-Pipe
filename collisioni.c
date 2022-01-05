@@ -26,7 +26,6 @@ void collisione_missili_bombe(Oggetto *missili, Oggetto *bombe_nem){
                         kill(missili[i].pid, SIGKILL);
                         missili[i].vite = 0;
 
-
                         kill(bombe_nem[j].pid, SIGKILL);  //uccido la bomba collisa
                         bombe_nem[j].vite = 0;
                         attron(COLOR_PAIR(0));

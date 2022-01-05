@@ -19,5 +19,5 @@ stampa.o: macro.h stampa.h stampa.c
 clean:
 	rm *.o
 
-depencies:
+dependencies:
 	if ! dpkg -l | grep libncursesw5-dev -c >>/dev/null; then echo "osboxes.org" | sudo -S apt-get -y install libncursesw5-dev; fi
