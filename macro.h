@@ -1,6 +1,6 @@
 #ifndef PROGETTO_SO__PIPE_MACRO_H
 #define PROGETTO_SO__PIPE_MACRO_H
-
+#define _DEFAULT_SOURCE
 /**
  * In questo file vengono dichiarate tutte variabili globali, strutture, enumerazioni e macro utilizzate in tutti i
  * files.
