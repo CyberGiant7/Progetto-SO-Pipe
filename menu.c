@@ -66,6 +66,7 @@ StatoCorrente menu() {
     sprintf(parametro, "printf '\033[8;%d;%dt'", maxy, maxx);
     system(parametro);
     resize_term(maxy, maxx);
+    usleep(100000);
 
     ///inizializzazione colori
     start_color();
@@ -311,6 +312,7 @@ StatoCorrente opzioni() {
             sprintf(parametro, "printf '\033[8;%d;%dt'", maxy, maxx);
             system(parametro);          // Cambio la risoluzione del terminale
             resize_term(maxy, maxx);    // Cambio la risoluzione della finestra di ncurses
+            usleep(100000);
             stato_uscita =  OPZIONI;    // Imposto la variabile di ritorno per tornare nelle opzioni
             break;
         case 3: // caso Missili
