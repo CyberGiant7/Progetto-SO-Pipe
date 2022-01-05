@@ -97,19 +97,67 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Progetto_SO__Pipe.dir/menu.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.c -o CMakeFiles/Progetto_SO__Pipe.dir/menu.c.s
 
+CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: CMakeFiles/Progetto_SO__Pipe.dir/flags.make
+CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c
+CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: CMakeFiles/Progetto_SO__Pipe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o -MF CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o.d -o CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o -c /home/cybergiant/CLionProjects/Progetto_SO__Pipe/stampa.c
+
+CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cybergiant/CLionProjects/Progetto_SO__Pipe/stampa.c > CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.i
+
+CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cybergiant/CLionProjects/Progetto_SO__Pipe/stampa.c -o CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.s
+
+CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o: CMakeFiles/Progetto_SO__Pipe.dir/flags.make
+CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o: ../collisioni.c
+CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o: CMakeFiles/Progetto_SO__Pipe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o -MF CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o.d -o CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o -c /home/cybergiant/CLionProjects/Progetto_SO__Pipe/collisioni.c
+
+CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cybergiant/CLionProjects/Progetto_SO__Pipe/collisioni.c > CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.i
+
+CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cybergiant/CLionProjects/Progetto_SO__Pipe/collisioni.c -o CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.s
+
+CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o: CMakeFiles/Progetto_SO__Pipe.dir/flags.make
+CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o: ../generazione_e_movimento.c
+CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o: CMakeFiles/Progetto_SO__Pipe.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o -MF CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o.d -o CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o -c /home/cybergiant/CLionProjects/Progetto_SO__Pipe/generazione_e_movimento.c
+
+CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/cybergiant/CLionProjects/Progetto_SO__Pipe/generazione_e_movimento.c > CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.i
+
+CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/cybergiant/CLionProjects/Progetto_SO__Pipe/generazione_e_movimento.c -o CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.s
+
 # Object files for target Progetto_SO__Pipe
 Progetto_SO__Pipe_OBJECTS = \
 "CMakeFiles/Progetto_SO__Pipe.dir/main.c.o" \
-"CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o"
+"CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o" \
+"CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o" \
+"CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o" \
+"CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o"
 
 # External object files for target Progetto_SO__Pipe
 Progetto_SO__Pipe_EXTERNAL_OBJECTS =
 
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
+Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o
+Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o
+Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/build.make
 Progetto_SO__Pipe: CMakeFiles/Progetto_SO__Pipe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable Progetto_SO__Pipe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/cybergiant/CLionProjects/Progetto_SO__Pipe/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Progetto_SO__Pipe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Progetto_SO__Pipe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

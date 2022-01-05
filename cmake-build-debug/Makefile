@@ -129,6 +129,54 @@ Progetto_SO__Pipe/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/build
 .PHONY : Progetto_SO__Pipe/fast
 
+collisioni.o: collisioni.c.o
+.PHONY : collisioni.o
+
+# target to build an object file
+collisioni.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o
+.PHONY : collisioni.c.o
+
+collisioni.i: collisioni.c.i
+.PHONY : collisioni.i
+
+# target to preprocess a source file
+collisioni.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.i
+.PHONY : collisioni.c.i
+
+collisioni.s: collisioni.c.s
+.PHONY : collisioni.s
+
+# target to generate assembly for a file
+collisioni.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.s
+.PHONY : collisioni.c.s
+
+generazione_e_movimento.o: generazione_e_movimento.c.o
+.PHONY : generazione_e_movimento.o
+
+# target to build an object file
+generazione_e_movimento.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o
+.PHONY : generazione_e_movimento.c.o
+
+generazione_e_movimento.i: generazione_e_movimento.c.i
+.PHONY : generazione_e_movimento.i
+
+# target to preprocess a source file
+generazione_e_movimento.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.i
+.PHONY : generazione_e_movimento.c.i
+
+generazione_e_movimento.s: generazione_e_movimento.c.s
+.PHONY : generazione_e_movimento.s
+
+# target to generate assembly for a file
+generazione_e_movimento.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.s
+.PHONY : generazione_e_movimento.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -177,6 +225,30 @@ menu.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/menu.c.s
 .PHONY : menu.c.s
 
+stampa.o: stampa.c.o
+.PHONY : stampa.o
+
+# target to build an object file
+stampa.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o
+.PHONY : stampa.c.o
+
+stampa.i: stampa.c.i
+.PHONY : stampa.i
+
+# target to preprocess a source file
+stampa.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.i
+.PHONY : stampa.c.i
+
+stampa.s: stampa.c.s
+.PHONY : stampa.s
+
+# target to generate assembly for a file
+stampa.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Progetto_SO__Pipe.dir/build.make CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.s
+.PHONY : stampa.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +258,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Progetto_SO__Pipe"
+	@echo "... collisioni.o"
+	@echo "... collisioni.i"
+	@echo "... collisioni.s"
+	@echo "... generazione_e_movimento.o"
+	@echo "... generazione_e_movimento.i"
+	@echo "... generazione_e_movimento.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... menu.o"
 	@echo "... menu.i"
 	@echo "... menu.s"
+	@echo "... stampa.o"
+	@echo "... stampa.i"
+	@echo "... stampa.s"
 .PHONY : help
 
 
