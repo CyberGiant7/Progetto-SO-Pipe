@@ -33,5 +33,9 @@ extern void stampaMissile(Oggetto *missile);
 extern void stampaBomba(Oggetto *bomba);
 StatoCorrente area_menu();
 
+StatoCorrente menu();
+extern StatoCorrente gioco();
+StatoCorrente opzioni();
+
 
 #endif //PROGETTO_SO___THREAD_AREA_MENU_H

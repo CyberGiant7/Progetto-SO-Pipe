@@ -1,5 +1,5 @@
-progetto_thread: main.o menu.o collisioni.o generazione_e_movimento.o stampa.o
-	gcc -o progetto_thread main.o menu.o collisioni.o generazione_e_movimento.o stampa.o -lncursesw
+progetto_processi: main.o menu.o collisioni.o generazione_e_movimento.o stampa.o
+	gcc -o progetto_processi main.o menu.o collisioni.o generazione_e_movimento.o stampa.o -lncursesw
 
 main.o: menu.h stampa.h generazione_e_movimento.h collisioni.h main.c
 	gcc -std=c99 -c main.c

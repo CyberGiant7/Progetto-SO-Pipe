@@ -136,7 +136,7 @@ void genera_missili(int *missili_vivi, Oggetto *rockets, int *pipe1, arg_from_na
                     rockets[*missili_vivi].id = ID_MISSILE1;
                 else
                     rockets[*missili_vivi].id = ID_MISSILE2;
-
+                system("aplay -q Suoni/missili.wav &");
                 rockets[*missili_vivi].pid = getpid();
                 missili(pipe1[1], &rockets[*missili_vivi]);
                 break;

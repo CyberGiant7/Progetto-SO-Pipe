@@ -91,15 +91,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/x86_64-linux-gnu/sys/wait.h
- /usr/include/time.h
- /usr/include/x86_64-linux-gnu/bits/time.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/locale.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
@@ -209,15 +204,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/x86_64-linux-gnu/sys/wait.h
- /usr/include/time.h
- /usr/include/x86_64-linux-gnu/bits/time.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/locale.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
@@ -327,15 +317,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/x86_64-linux-gnu/sys/wait.h
- /usr/include/time.h
- /usr/include/x86_64-linux-gnu/bits/time.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/locale.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
@@ -354,9 +339,9 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o
  /usr/include/x86_64-linux-gnu/asm/posix_types.h
  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h
  /usr/include/asm-generic/posix_types.h
- /home/cybergiant/CLionProjects/Progetto_SO__Pipe/collisioni.h
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/stampa.h
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/generazione_e_movimento.h
+ /home/cybergiant/CLionProjects/Progetto_SO__Pipe/collisioni.h
 
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
  /home/cybergiant/CLionProjects/Progetto_SO__Pipe/menu.c
@@ -448,15 +433,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/x86_64-linux-gnu/sys/wait.h
- /usr/include/time.h
- /usr/include/x86_64-linux-gnu/bits/time.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/locale.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h
@@ -566,15 +546,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
- /usr/include/x86_64-linux-gnu/sys/wait.h
- /usr/include/time.h
- /usr/include/x86_64-linux-gnu/bits/time.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h
- /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
- /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/locale.h
  /usr/include/x86_64-linux-gnu/bits/locale.h
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h
  /usr/include/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl.h
  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h

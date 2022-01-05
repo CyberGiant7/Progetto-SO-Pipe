@@ -90,15 +90,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/collisioni.c.o: ../collisioni.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/x86_64-linux-gnu/sys/wait.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -207,15 +202,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/generazione_e_movimento.c.o: ../generazione_e_m
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/x86_64-linux-gnu/sys/wait.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -324,15 +314,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/x86_64-linux-gnu/sys/wait.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -351,9 +336,9 @@ CMakeFiles/Progetto_SO__Pipe.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/asm/posix_types.h \
   /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
   /usr/include/asm-generic/posix_types.h \
-  ../collisioni.h \
   ../stampa.h \
-  ../generazione_e_movimento.h
+  ../generazione_e_movimento.h \
+  ../collisioni.h
 
 CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/stdc-predef.h \
@@ -444,15 +429,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/menu.c.o: ../menu.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/x86_64-linux-gnu/sys/wait.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -561,15 +541,10 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/x86_64-linux-gnu/sys/wait.h \
-  /usr/include/time.h \
-  /usr/include/x86_64-linux-gnu/bits/time.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
-  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
-  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/locale.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
@@ -606,6 +581,8 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 
 /usr/include/linux/types.h:
 
+/usr/include/linux/prctl.h:
+
 ../stampa.h:
 
 /usr/include/x86_64-linux-gnu/sys/prctl.h:
@@ -613,12 +590,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
-
-/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
-
-/usr/include/fcntl.h:
-
-/usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -654,13 +625,11 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 
 /usr/include/features.h:
 
-/usr/include/x86_64-linux-gnu/sys/wait.h:
+/usr/include/x86_64-linux-gnu/asm/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -724,10 +693,6 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/x86_64-linux-gnu/bits/fcntl.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
 ../menu.c:
 
 /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
@@ -782,13 +747,11 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 
 /usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
-/usr/include/time.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
 
 ../collisioni.h:
 
@@ -826,12 +789,14 @@ CMakeFiles/Progetto_SO__Pipe.dir/stampa.c.o: ../stampa.c \
 
 /usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
-/usr/include/linux/prctl.h:
+/usr/include/locale.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+/usr/include/stdint.h:
 
-/usr/include/x86_64-linux-gnu/asm/types.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
+/usr/include/fcntl.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
