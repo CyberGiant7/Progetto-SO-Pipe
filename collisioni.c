@@ -37,6 +37,7 @@ void collisione_missili_bombe(Oggetto *missili, Oggetto *bombe_nem){
                         mvaddstr(bombe_nem[j].pos.y, bombe_nem[j].pos.x, "  ");
                         mvaddstr(bombe_nem[j].old_pos.y, bombe_nem[j].old_pos.x, "  ");
                         attroff(COLOR_PAIR(0));
+                        system("aplay -q Suoni/missile_bomba.wav &");
                         missili[i] = init; // la locazione del missile colliso viene reinizializzata con @init
                         bombe_nem[j] = init; // la locazione della bomba collisa viene reinizializzata con @init
                     }
@@ -66,8 +67,9 @@ void collisione_bombe_navicella(Oggetto *navicella, Oggetto *bombe_nem) {
                     /* Se la posizione di una bomba coincide con quella della navicella del giocatore*/
                     if (bombe_nem[i].pos.x == navicella->pos.x + k && bombe_nem[i].pos.y == navicella->pos.y + j) {
                         kill(bombe_nem[i].pid, SIGKILL);  // uccido la bomba collisa
-                        system("aplay -q Suoni/hit_navicella.wav &"); // Genera un effetto sonoro che indica la collisione
                         navicella->vite--; // decrementa le vite della nave player
+                        if (navicella->vite > 0)
+                            system("aplay -q Suoni/hit_navicella.wav &"); // Genera un effetto sonoro che indica la collisione
                         /* Cancellazione della bomba collisa dallo schermo*/
                         attron(COLOR_PAIR(0));
                         mvaddstr(bombe_nem[i].pos.y, bombe_nem[i].pos.x, " ");

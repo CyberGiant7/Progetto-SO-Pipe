@@ -391,7 +391,6 @@ _Bool AreaGioco(int *pipe1, int pipe_from_navicella, Oggetto *enemies) {
     free(bombe_nem);
     free(primafila);
     free(pipe_to_bombe);
-
     return WIN;
 }
 
