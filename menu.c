@@ -117,7 +117,7 @@ StatoCorrente area_menu() {
     wrefresh(menuwin);
 
     keypad(menuwin, TRUE);      // Abilitazione dei tasti freccia
-
+    flushinp();
     while (TRUE) {
         wmove(menuwin, 0, 1);
         /// stampa dei campi del menu
